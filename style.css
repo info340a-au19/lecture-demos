@@ -1,0 +1,20 @@
+h1 {
+    font-family: 'Helvetica';
+    color: white;
+    background-color: #333;   
+    text-align: center;
+    padding: 3em;
+}
+
+img {
+    width: 300px;
+
+}
+
+strong {
+  font-size: 2em;
+  color: red;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: underline;
+}
