@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+/* container */
+.boxes {
+    padding: .5em 0;
+    background-color: rebeccapurple;
+}
+
+ /* items */
+.boxes div {
+    background-color: orange;
+    margin: .5em;
+    padding: .25em;
+}
