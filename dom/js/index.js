@@ -1,16 +1,5 @@
 'use strict';
 
-let links = document.querySelector('ul');
-
-// let urls = ['https:...', ];
-
-let newListItem = document.createElement('li');
-newListItem.innerHTML = '<a href="https://ischool.uw.edu/">iSchool Again</a>';
-
-console.log(newListItem);
-
-links.appendChild(newListItem);
-
 function renderCookie() {
     let cookieImageElement = document.createElement('img');
     cookieImageElement.src = "img/cookie.png";
@@ -45,4 +34,5 @@ button2.addEventListener('click', function() {
     state.numCookies += 3; //increment cookies
     renderCookieJar(state.numCookies)
 })
+
 
