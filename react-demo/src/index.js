@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './style.css'; //include our css (bundled)
 import App from './App';
 
+//quick work-around for loading a json file
+//import myData from './myfile.json'
+
 const SAMPLE_TASKS = [
   {id:1, description:'Learn JSX', complete:true},
   {id:2, description:'Learn about React State', complete:false},
@@ -10,4 +13,8 @@ const SAMPLE_TASKS = [
 ];
 
 //render App, passing it array as prop!
-ReactDOM.render(<App initialTasks={SAMPLE_TASKS} />, document.getElementById('root'));
+ReactDOM.render(
+  <App initialTasks={SAMPLE_TASKS} />, 
+  document.getElementById('root')
+);
+

@@ -10,7 +10,7 @@ class App extends Component {
 
     return (
       <div className="container">
-        <p className="lead">I have to do ({incompleteTasks.length}) things today</p>
+        <p className="lead">I have to do {incompleteTasks.length} things today</p>
         <TaskList tasks={taskData} />
         <AddTaskForm />
       </div>
@@ -35,18 +35,43 @@ class TaskList extends Component {
 }
 
 class Task extends Component {
+  constructor(props){
+    super(props);
+
+    //this.state.complete = this.initialComplete
+    this.state = {
+      complete: this.props.task.complete,
+      count: 0
+    };
+  }
+
   //helper method
   getClassName() {
-    if(this.props.task.complete){
+    // if(this.props.task.complete){
+    if(this.state.complete){
       return 'font-strike';
     }
     return ''; //no className otherwise
   }
 
+  toggleComplete = () => {
+    // console.log(this);
+    //this.props.task.complete = !this.props.task.complete;
+    console.log("toggle completeness of", this.props.task.description);
+    //CHANGE THE STATE
+    this.setState((currState) => {
+        return {complete: !currState.complete}
+      }   
+    )
+  }
+
   render() {
+    console.log("rendering a task");
+    //console.log("The task: ", this.props.task);
     return (
-      <li className={this.getClassName()} >
-        {this.props.task.description}
+      <li className={this.getClassName()} 
+          onClick={ this.toggleComplete } >
+            {this.props.task.description}
       </li>
     );
   }
